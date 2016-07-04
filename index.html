@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Picoco</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chromium <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+  </body>
+
+  <script>
+    const fileUtil = require('./util/fileUtil.js');
+    filenames = fileUtil.imagesInDir(".");
+    console.log(filenames);
+  </script>
+</html>
