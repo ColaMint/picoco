@@ -3,7 +3,11 @@ const fs = require('fs.extra');
 const mime = require('mime');
 
 exports.selectFolder = function() {
-    return dialog.showOpenDialog({ properties: [ 'openDirectory' ]});
+    var folder = dialog.showOpenDialog({ properties: [ 'openDirectory' ]});
+    if (folder != undefined) {
+        folder = folder[0]; 
+    }
+    return folder;
 }
 
 exports.copyFile = function(src, dest, errorHandler) {
