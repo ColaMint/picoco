@@ -5,14 +5,33 @@
     <title>Picoco</title>
     <link href="../public/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../css/index.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/callout.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <div id="configuration_block">
-        <button type="button" class="btn btn-primary">选择文件夹</button>
+    <div class="bs-callout bs-callout-primary">
+        <h4>Picoco</h4>
     </div>
-    <div id="classification_block"></div>
-    <div id="picture_block"></div>
+    <div id="configuration-block" class="picoco-block">
+        <button id="btn-select-folder" type="button" class="btn btn-primary btn-picoco-left">Select Folder</button>
+        <table class="table table-striped table-hover picoco-table">
+            <tbody> 
+                <tr>
+                    <th>total</th>
+                    <td id="num-of-selected-pics">0</td>
+                </tr>
+                <tr>
+                    <th>classified</th>
+                    <td id="num-of-classified-pics">0</td>
+                </tr>
+                <tr>
+                    <th>remaining</th>
+                    <td id="num-of-remaining-pics">0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="classification-block" class="picoco-block"></div>
+    <div id="picture-block" class="picoco-block"></div>
     <div></div>
   </body>
   <script>window.$ = window.jQuery = require("../public/jquery/jquery.js");</script>

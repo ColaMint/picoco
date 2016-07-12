@@ -7,23 +7,20 @@ var LifeCycle = exports.LifeCycle = new (function() {
 
 exports.Picoco = function() {
     this.state = LifeCycle.INIT;
-
+    this.folder = null;
+    this.picNum = 0;
+    this.imagesInFolder = null;
     this.listeners = new Array();
 
-    this.onStateChanged = function(state, callback) {
-        if (!(state in this.listeners)) {
-            this.listeners[state] = new Array();
-        }
-        this.listeners[state].push(callback); 
+    this.onStateChanged = function(callback) {
+        this.listeners.push(callback); 
     };
 
     this.changeState = function(newState) {
         oldState = this.state;
         this.state = newState;
-        if (state in this.listeners) {
-            for (i in this.listeners[state]) {
-                this.listeners[state][i](oldState, newState);
-            }
+        for (i in this.listeners) {
+            this.listeners[i](oldState, newState);
         }
     };
 }
